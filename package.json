@@ -1,0 +1,31 @@
+{
+  "name": "times_tables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmvillaveces/Times-Tables.git"
+  },
+  "author": "jmVillaveces",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jmvillaveces/Times-Tables/issues"
+  },
+  "homepage": "https://github.com/jmvillaveces/Times-Tables#readme",
+  "dependencies": {
+    "d3": "^3.5.5",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-http-server": "^1.16.0"
+  }
+}
