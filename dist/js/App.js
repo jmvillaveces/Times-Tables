@@ -2,7 +2,7 @@
 var d3 = require('d3');
 var _ = require('underscore');
 
-var r = 250;
+var r = 250, n = 200;
 
 var svg = d3.select("body").append("svg")
     .attr("width", 900)
@@ -10,17 +10,23 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(500,500)");
 
-var nodes = _.map(d3.range(0, 360, 1.8), function(d, id){
-   return {rotate: d, id: id}; 
+var nodes = _.map(_.range(0, n), function(d){
+    
+    return {
+       x: Math.cos(d * 2*Math.PI/n) * r, 
+       y: Math.sin(d * 2*Math.PI/n) * r, 
+       id: d
+   }; 
 });
 
-var g = svg.selectAll("g")
-    .data(nodes)
-  .enter().append("g")
-    .attr("transform", function(d) { return "rotate(" + d.rotate + ")"; });
+console.log(nodes);
 
-g.append('circle')
-    .attr("cx", r)
+var circle = svg.selectAll("circle")
+    .data(nodes)
+  .enter().append("circle")
+    .attr("cx", function(d){ return d.x; })
+    .attr("cy", function(d){ return d.y; })
+    .attr("id", function(d){ return d.id})
     .attr("r", 1);
 },{"d3":2,"underscore":3}],2:[function(require,module,exports){
 !function() {
