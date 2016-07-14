@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-    
+
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -25,44 +25,58 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         'http-server': {
- 
+
             'dev': {
 
-                // the server root directory 
+                // the server root directory
                 //root: <path>,
 
-                // the server port 
-                // can also be written as a function, e.g. 
-                // port: function() { return 8282; } 
+                // the server port
+                // can also be written as a function, e.g.
+                // port: function() { return 8282; }
                 port: 8282,
 
-                // the host ip address 
-                // If specified to, for example, "127.0.0.1" the server will 
-                // only be available on that ip. 
-                // Specify "0.0.0.0" to be available everywhere 
+                // the host ip address
+                // If specified to, for example, "127.0.0.1" the server will
+                // only be available on that ip.
+                // Specify "0.0.0.0" to be available everywhere
                 host: "0.0.0.0",
 
-                // Tell grunt task to open the browser 
+                // Tell grunt task to open the browser
                 openBrowser : true
 
             }
 
+        },
+
+        less: {
+            development: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: {
+                    "dist/css/app.css": "less/app.less" // destination file and source file
+                }
+            }
         }
     });
-    
+
     //Tasks
-    grunt.registerTask('dist', ['jshint', 'browserify', 'uglify']);
-    
+    grunt.registerTask('dist', ['jshint', 'less', 'browserify', 'uglify']);
+
     grunt.registerTask('serve', ['http-server']);
-    
+
     //Generates dist folder
-    
+
     // Load the plugins
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    
+    grunt.loadNpmTasks('grunt-contrib-less');
+
 };

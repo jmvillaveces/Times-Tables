@@ -1,9 +1,56 @@
 <html>
 
     <head>
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>Mandelbot</title>
+
+      <!-- Custom Fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+      <link href='css/app.css' rel='stylesheet' type='text/css'>
+
     </head>
 
     <body>
+      <div class="container-fluid">
+        <div class="col-md-2">
+          <h1>MANDELBOT</h1>
+          <p>A javascript application to explore some of the beautiful patterns that hide in the <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Mandelbrot set.</a></p>
+          <p>
+            Mandelbot was inspired by <a href="https://www.youtube.com/channel/UC1_uAIS3r8Vu6JjXWvastJg">Mathologer</a> and <a href="https://www.youtube.com/watch?v=qhbuKbxJsk8">this video</a>.
+          </p>
+          <p style="margin-top:100px;">
+            <div class="row">
+              <div class="col-md-12">
+                <input id="elements" type="text" class="form-control" placeholder="number of elements...">
+              </div>
+              <div class="col-md-12" style="margin-top:10px;">
+                <input id="factor" type="text" class="form-control" placeholder="factor...">
+              </div>
+              <div class="col-md-12" style="margin-top:10px;text-align: center;">
+                <button id='generate' type="button" class="btn btn-success">
+                  Generate
+                </button>
+              </div>
+            </div>
+          </p>
+          <div style="margin-top:25px;">
+            <h5>EXAMPLES</h5>
+            <ul>
+              <li><a id="400,2" class="lnk" href="#">cardioid (400, 2)</a></li>
+              <li><a id="400,3" class="lnk" href="#">nefroid (400, 3)</a></li>
+              <li><a id="2000,34" class="lnk" href="#">bone structure (2000, 34)</a></li>
+              <li><a id="200,99" class="lnk" href="#">chess (200, 99)</a></li>
+              <li><a id="200,51" class="lnk" href="#">sun (200, 51)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id='mandala' class="col-md-6 col-md-offset-2"></div>
+      </div>
     </body>
     <script src="js/App.js"></script>
 </html>

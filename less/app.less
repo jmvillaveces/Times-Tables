@@ -1,0 +1,34 @@
+@import (inline) "node_modules/bootstrap/dist/css/bootstrap.css";
+
+@import "variables.less";
+
+body {
+  background-color: @bkg;
+  color: @clouds;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* SVG responsive */
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+ul {
+    list-style: none;
+}
